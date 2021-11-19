@@ -6,7 +6,7 @@ using System.Threading;
 
 namespace DLA
 {
-    class Output : WorkingWithMatrix
+    public class Output : WorkingWithMatrix
     {
         private int _countLivinCells;
         public void DrawMatrix()
