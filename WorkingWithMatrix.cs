@@ -61,9 +61,10 @@ namespace DLA
         {
             _oldMatrix_y = 0;
             _oldMatrix_x = 0;
+            int countMove = 0;
             while (_oldMatrix_y != _lengthY)
             {
-                if (_matrix[_oldMatrix_y, _oldMatrix_x] == 2)
+                if (_matrix[_oldMatrix_y, _oldMatrix_x] == 2 & countMove!=1)
                 {
                     _y = _oldMatrix_y;
                     _x = _oldMatrix_x;
@@ -80,6 +81,7 @@ namespace DLA
                                 _matrix[_oldMatrix_y, _oldMatrix_x] = 0;
                                 _matrix[_y, _x] = 2;
                                 _newMatrix[_y, _x] = 2;
+                                countMove++;
                             }
                         }
                         else
