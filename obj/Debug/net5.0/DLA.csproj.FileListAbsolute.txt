@@ -1,0 +1,16 @@
+E:\Projects\Repos\DLA_Project\DLA\bin\Debug\net5.0\DLA.exe
+E:\Projects\Repos\DLA_Project\DLA\bin\Debug\net5.0\DLA.deps.json
+E:\Projects\Repos\DLA_Project\DLA\bin\Debug\net5.0\DLA.runtimeconfig.json
+E:\Projects\Repos\DLA_Project\DLA\bin\Debug\net5.0\DLA.runtimeconfig.dev.json
+E:\Projects\Repos\DLA_Project\DLA\bin\Debug\net5.0\DLA.dll
+E:\Projects\Repos\DLA_Project\DLA\bin\Debug\net5.0\ref\DLA.dll
+E:\Projects\Repos\DLA_Project\DLA\bin\Debug\net5.0\DLA.pdb
+E:\Projects\Repos\DLA_Project\DLA\obj\Debug\net5.0\DLA.csproj.AssemblyReference.cache
+E:\Projects\Repos\DLA_Project\DLA\obj\Debug\net5.0\DLA.GeneratedMSBuildEditorConfig.editorconfig
+E:\Projects\Repos\DLA_Project\DLA\obj\Debug\net5.0\DLA.AssemblyInfoInputs.cache
+E:\Projects\Repos\DLA_Project\DLA\obj\Debug\net5.0\DLA.AssemblyInfo.cs
+E:\Projects\Repos\DLA_Project\DLA\obj\Debug\net5.0\DLA.csproj.CoreCompileInputs.cache
+E:\Projects\Repos\DLA_Project\DLA\obj\Debug\net5.0\DLA.dll
+E:\Projects\Repos\DLA_Project\DLA\obj\Debug\net5.0\ref\DLA.dll
+E:\Projects\Repos\DLA_Project\DLA\obj\Debug\net5.0\DLA.pdb
+E:\Projects\Repos\DLA_Project\DLA\obj\Debug\net5.0\DLA.genruntimeconfig.cache
