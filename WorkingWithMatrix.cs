@@ -7,23 +7,43 @@ using System.Threading;
 namespace DLA
 {
     class WorkingWithMatrix
-    {
-        protected static int[,] _matrix;
-        protected static int[,] _newMatrix;
-        protected static int _lengthX;
-        protected static int _lengthY;
+    {        
+        //Зачем этих четверых делать статическими? У нас же конкретная матрица
+        private int[,] _matrix;
+        private int[,] _newMatrix;
+        private int _lengthX;
+        private int _lengthY;
         private int _direction;
         private int _x;
         private int _y;
         private int _oldMatrix_x;
         private int _oldMatrix_y;
-        protected static bool _work=true;
-        protected static int _numberLivCells;
-        protected static int _numberParticle;
+        //Аналогично - зачем так баловаться статическими переменными?
+        private bool _work=true;
+        public int NumberLivCells { get; private set; }//Так аккуратнее
+        protected int _numberParticle;
 
+        public int [,] GetMatrix ()
+        {
+            return _matrix;
+        }
+
+        public bool Work//В Output это не нужно)
+        {
+            get
+            {
+                return _work;
+            }
+
+        }
+
+        public void ShutDown()//А если хочется выключать извне, то лучше так =)
+        {
+            _work = false;
+        }
         public void GenerationMatrix(int numberCells)
         {
-            _numberLivCells = numberCells;
+            NumberLivCells = numberCells;
             _lengthX = numberCells * 2;
             _lengthY = numberCells * 2;
             _matrix = new int[_lengthX, _lengthY];
@@ -36,6 +56,7 @@ namespace DLA
             Random rnd = new Random();
             int dice_x = 0;
             int dice_y = 0;
+            
             while (_matrix[dice_y, dice_x] != 2)
             {
                 dice_x = rnd.Next(0, _lengthX);
@@ -48,7 +69,7 @@ namespace DLA
             _numberParticle++;
         }
 
-        public int CheckNumberParticle
+        public int CheckNumberParticle //Если что-то называется через Check, оно обычно должно true-false возвращать - проверка же. Но не критично =)
         {
             get
             {
@@ -62,7 +83,7 @@ namespace DLA
             _oldMatrix_y = 0;
             _oldMatrix_x = 0;
             int countMove = 0;
-            while (_oldMatrix_y != _lengthY)
+            while (_oldMatrix_y != _lengthY)//А почему нельзя это двойным фором перебрать? О_О
             {
                 if (_matrix[_oldMatrix_y, _oldMatrix_x] == 2 & countMove!=1)
                 {
@@ -105,7 +126,18 @@ namespace DLA
         {
             _oldMatrix_y = 0;
             _oldMatrix_x = 0;
-            while (_oldMatrix_y != _lengthY)
+            while (_oldMatrix_y != _lengthY)//Ну, тут, мне кажется, можно как-то попроще все-таки
+                                            //Проверка соседей - это же просто проверка 8 клеток около заданной с координатами
+            /*
+             * x-1;y-1
+             * x;y-1
+             * x+1;y-1
+             * x-1;y
+             * x+1;y
+             * x-1;y+1
+             * x;y+1
+             * x+1;y+1
+            */
             {
                 if (_matrix[_oldMatrix_y, _oldMatrix_x] == 2)
                 {
@@ -215,9 +247,12 @@ namespace DLA
         {
             switch(_direction)
             {
-                case 0:
-                    _y--;
-                break;
+                case 0://Синтаксис Switch-case такой
+                    {
+                        _y--;
+                        break;
+                    }
+                    
                 case 1:
                     _y++;
                 break;
